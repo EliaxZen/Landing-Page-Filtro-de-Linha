@@ -1,0 +1,232 @@
+@keyframes eletricityText {
+  0% {
+    text-shadow: 0px 0px 0px #e4dfda;
+  }
+  100% {
+    text-shadow: 0px 0px 5px #e4dfda;
+  }
+}
+@keyframes eletricityShadow {
+  0% {
+    box-shadow: 0px 0px 0px #e4dfda;
+  }
+  100% {
+    box-shadow: 0px 0px 20px #e4dfda;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: #ffffff;
+  text-decoration: none;
+  font-family: sans-serif;
+}
+
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+}
+
+.bg {
+  height: 100vh;
+  width: 100vw;
+  background-image: url(/assets/images/bg.jpg);
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.3);
+}
+
+header {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgba(transparent, transparent, transparent, 0.1);
+  border-bottom: 3px solid #FFF;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  z-index: 999;
+}
+
+.logo_img a img {
+  width: 100%;
+  height: 50px;
+}
+
+.logo_title {
+  animation: eletricityText 0.4s infinite linear alternate;
+  margin-left: 10px;
+  font-size: 30px;
+  color: #ffffff;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-style: italic;
+}
+
+
+nav ul {
+  display: flex;
+}
+nav ul li {
+  list-style: none;
+  margin-right: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  font-style: italic;
+  font-family: sans-serif;
+  cursor: pointer;
+}
+nav ul li a {
+  width: 100%;
+  height: 100%;
+}
+nav ul li a::selection {
+  user-select: none;
+}
+nav ul li a:hover {
+  animation: eletricityText 0.4s infinite linear alternate;
+  border-bottom: 3px solid #FFF;
+}
+nav ul li:active {
+  transition: all ease 0.2s;
+  transform: scale(0.8);
+}
+
+#section1 {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+}
+h1 {
+  animation: eletricityText 1s infinite linear alternate;
+  text-align: center;
+  font-size: 40px;
+}
+
+#section1 button {
+  font-size: 20px;
+  margin-top: 10px;
+  padding: 20px 30px;
+  border-radius: 20px;
+  background-color: #228f34;
+  color: #fff;
+  display: inline-block;
+  cursor: pointer;
+  border: none;
+  font-weight: bold;
+  animation: eletricityShadow 1s infinite linear alternate;
+}
+#section1 button:hover {
+  background-color: #32a345;
+  transition: all 0.3s;
+  transform: scale(1.1);
+}
+
+#section1 button:active {
+  transform: translateY(-5px);
+}
+
+.image{
+  display: flex;
+  align-items: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.image img {
+  object-fit: cover;
+  border-radius: 20px;
+  width: 500px;
+  background-color: transparent;
+  filter: brightness(0.8);
+}
+
+/* Menu mobile e media queries */
+@keyframes menuOpenner {
+  0% {
+    transform: translateX(300px);
+  }
+  }
+  .menu-mobile {
+    position: absolute;
+    top: 100px;
+    right: 0;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    height: 70%;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    animation: menuOpenner 0.5s ;
+  }
+  
+  .menu-mobile--navegacao {
+    margin-top: 50px;
+  }
+  .menu-mobile--navegacao nav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .menu-mobile--navegacao nav ul li {
+    margin-bottom: 20px;
+    padding: 20px;
+  }
+  .menu-mobile--img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  }
+  .menu-mobile--img img {
+    filter: invert();
+    cursor: pointer;
+  }
+  
+  @media (min-width: 1025px) {
+    .menu-mobile {
+      display: none;
+    }
+    .menu-mobile--img {
+      display: none;
+    }
+  } 
+  
+  @media (max-width: 1024px) and (min-width: 767px) {
+    .navegacao {
+      display: none;
+    }
+    .image img {
+      width: 400px;
+    }
+  } 
+
+
+  @media (min-width: 300px) and (max-width: 765px) {
+    .navegacao {
+      display: none;
+    }
+    .image img {
+      width: 300px;
+    }
+    .logo_title {
+      font-size: 25px;
+    }
+    h1 {
+      font-size: 30px;
+    }
+  }
