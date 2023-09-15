@@ -264,6 +264,6 @@ justify-content: center;
   }
   button {
     position: absolute;
-    bottom: 20px;
+    bottom: 20%;
   }
 }
